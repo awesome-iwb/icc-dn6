@@ -75,6 +75,7 @@
                                FontSize="26" />
                     <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="True" Title="开机进入桌面后运行" Description="开机后启动InkCanvasForClass"/>
                     <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="True" Title="开机自启为侧边收纳模式" Description="开机后收纳到屏幕侧边，而不显示工具栏"/>
+                    <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="True" Title="允许使用命令行参数启动" Description="允许使用支持的命令行参数条件化启动"/>
                     <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="False" Title="开启 UIAccess" IsExperimental="True" Description="允许让 icc 界面强制置顶"/>
                 </hc:SimpleStackPanel>
                 <hc:SimpleStackPanel Margin="24,0">
@@ -153,10 +154,12 @@
                     <controls:SettingsSliderNumberItem Margin="0,0,0,12" Title="主工具栏 UI 透明度" Description="修改主浮动工具栏的 UI 透明度" Maximum="1" Minimum="0.1" TickFrequency="0.05" IsSnapToTick="True" Value="0.85" RecommendedValue="0.85"/>
                     <controls:SettingsSliderNumberItem Margin="0,0,0,12" Title="主工具栏 UI PPT 模式下透明度" Description="修改主浮动工具栏的 UI 透明度（PPT 模式下）" Maximum="1" Minimum="0.1" TickFrequency="0.05" IsSnapToTick="True" Value="0.85" RecommendedValue="0.85"/>
                     <hc:Divider Margin="0,0,0,12"/>
-                    <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="True" Title="白板内显示自定义内容" Description="如果需要自定义显示格式和位置，请在 icc 运行目录下 “icc.whiteboard.json” 文件中进行修改。"/>
+                    <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="True" Title="白板内显示自定义内容" Description="支持显示时间和日期，以及每日一句等"/>
+                    <Button Style="{StaticResource ButtonPrimary}" HorizontalAlignment="Stretch" FontSize="15" Height="38" Margin="0,0,0,12">编辑白板模式自定义内容</Button>
                     <controls:SettingsSliderNumberItem Margin="0,0,0,12" Title="白板模式 UI 缩放" Description="修改白板模式下 UI 控件的大小" Maximum="2" Minimum="0.25" TickFrequency="0.05" IsSnapToTick="True" Value="1" RecommendedValue="1"/>
                     <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="True" Title="显示 “漫游” 按钮" Description="类似于“鸿合白板软件”的漫游功能"/>
-                    <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="True" Title="显示 “鸿合π6” 风格侧边漫游手柄" Description="更多配置请前往 icc 运行目录下 “icc.hitevision.json” 文件中修改，重启后生效"/>
+                    <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="True" Title="显示 “鸿合π6” 风格侧边漫游手柄" Description="方便习惯使用 “鸿合π6” 的老师快速适应"/>
+                    <Button Style="{StaticResource ButtonPrimary}" HorizontalAlignment="Stretch" FontSize="15" Height="38" Margin="0,0,0,12">自定义漫游手柄</Button>
                     <Grid Margin="0,0,0,12">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -186,7 +189,7 @@
                             <hc:SimpleStackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,4">
                                 <hc:SimpleText FontSize="17" Foreground="White" Opacity="0.9" Text="白板模式默认稿纸背景"/>
                             </hc:SimpleStackPanel>
-                            <hc:SimpleText TextWrapping="WrapWithOverflow" FontSize="14" Foreground="White" Opacity="0.5" Text="稿纸背景相关配置可前往 icc 运行目录下 “icc.whiteboard.json” 文件中修改"/>
+                            <hc:SimpleText TextWrapping="WrapWithOverflow" FontSize="14" Foreground="White" Opacity="0.5" Text="创建新页面时自动套用"/>
                         </hc:SimpleStackPanel>
                         <hc:SimpleStackPanel Grid.Column="1" Margin="24,0,6,0" Orientation="Horizontal">
                             <ComboBox SelectedIndex="0" FontSize="15" Padding="16,0" Height="36">
@@ -198,8 +201,11 @@
                         </hc:SimpleStackPanel>
                     </Grid>
                     <hc:Divider Margin="0,0,0,12"/>
-                    <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="True" Title="使用 QuickPanel" Description="如果需要自定义 QuickPanel 的行为，请在 icc 运行目录下 “icc.quickpanel.json” 文件中进行修改。"/>
-                    <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="True" Title="在托盘区域显示 icc 图标" Description="如果需要自定义托盘图标，请在 icc 运行目录下 “icc.trayicon.json” 文件中进行修改。"/>
+                    <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="True" Title="使用 QuickPanel" Description="为收纳按钮添加弹出面板，方便快速启动功能"/>
+                    <Button Style="{StaticResource ButtonPrimary}" HorizontalAlignment="Stretch" FontSize="15" Height="38" Margin="0,0,0,12">启动QuickPanel编辑器</Button>
+                    <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="True" Title="在托盘区域显示 icc 图标" Description="在任务栏托盘区域显示"/>
+                    <Button Style="{StaticResource ButtonPrimary}" HorizontalAlignment="Stretch" FontSize="15" Height="38" Margin="0,0,0,12">编辑任务栏图标行为</Button>
+
                 </hc:SimpleStackPanel>
                 <hc:SimpleStackPanel Margin="24,0">
                     <TextBlock Margin="0,12,0,18" Text="PPT 适配" FontWeight="Bold" Foreground="#fafafa"
@@ -207,6 +213,7 @@
                     <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="True" Title="启用 PowerPoint 支持" Description="无法生效请去查阅 FAQ"/>
                     <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="True" Title="尝试支持 WPS Office" IsExperimental="True" Description="WPS Office 不如 MS Office 好用，若使用 WPS 支持时出现问题，开发者将不会积极修复"/>
                     <controls:SettingsToggleSwitchItem Margin="0,0,0,12" IsChecked="False" Title="启用 VSTO 支持" IsExperimental="True" Description="高度实验性功能，请在 icc 运行目录下 “icc.vstohelper.json” 文件中修改配置"/>
+                    <Button Style="{StaticResource ButtonPrimary}" HorizontalAlignment="Stretch" FontSize="15" Height="38" Margin="0,0,0,12">尝试重启 VSTOHelper</Button>
                     <hc:Divider Margin="0,0,0,12"/>
                     <Grid Margin="0,0,0,12">
                         <Grid.RowDefinitions>

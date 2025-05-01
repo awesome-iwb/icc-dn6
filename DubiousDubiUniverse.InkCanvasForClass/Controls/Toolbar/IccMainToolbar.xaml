@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="DubiousDubiUniverse.InkCanvasForClass.Controls.Toolbar.IccMainToolbar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:toolbar="clr-namespace:DubiousDubiUniverse.InkCanvasForClass.Controls.Toolbar"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Dictionaries/MainToolbarShapesDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <UserControl.LayoutTransform>
+        <TransformGroup>
+            <ScaleTransform ScaleX="1.25" ScaleY="1.25"/>
+        </TransformGroup>
+    </UserControl.LayoutTransform>
+    <Grid>
+        <hc:SimpleStackPanel Orientation="Horizontal">
+            <hc:SimplePanel Width="48" Height="48">
+                <Image Source="{StaticResource toolbar_head_shape}" Stretch="Fill" Opacity="1"/>
+                <Image Source="../../Resources/icc-transparent-black.png" Width="36" RenderOptions.BitmapScalingMode="HighQuality"/>
+            </hc:SimplePanel>
+            <hc:SimplePanel Margin="6,0,0,0">
+                <DockPanel HorizontalAlignment="Stretch" IsHitTestVisible="False">
+                    <Image Source="{StaticResource toolbar_body_side}" Height="48" DockPanel.Dock="Left">
+                        <Image.RenderTransform>
+                            <TranslateTransform X="1"/>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Source="{StaticResource toolbar_body_side_r}" Height="48" DockPanel.Dock="Right">
+                        <Image.RenderTransform>
+                            <TranslateTransform X="-1"/>
+                        </Image.RenderTransform>
+                    </Image>
+                    <hc:SimplePanel Background="#FFE6E6E6" HorizontalAlignment="Stretch"/>
+                </DockPanel>
+                <hc:SimpleStackPanel Orientation="Horizontal" Margin="9,0">
+                    <toolbar:ToolbarButton Width="40" Height="48" Title="鼠标" IconName="mouse" IconSize="18"/>
+                    <toolbar:ToolbarButton Width="40" Height="48" Title="批注" IconName="pen" IconSize="18"/>
+                    <toolbar:ToolbarButton Width="40" Height="48" Title="清屏" IconName="trashbin" IconSize="18" FontWeight="Bold" IconColor="#e7000b" FontColor="#e7000b"/>
+                    <toolbar:ToolbarSeparatorControl Margin="4,0" SeparatorThickness="1.5" CornerRadius="0.75" SeparatorColor="Black" SeparatorHeight="38" SeparatorOpacity="0.5"/>
+                    <toolbar:ToolbarButton Width="40" Height="48" Title="白板" IconName="whiteboard" IconSize="18"/>
+                    <toolbar:ToolbarButton Width="40" Height="48" Title="展台" IconName="webcam" IconSize="18"/>
+                    <toolbar:ToolbarButton Width="40" Height="48" Title="菜单" IconName="app" IconSize="18"/>
+                </hc:SimpleStackPanel>
+            </hc:SimplePanel>
+        </hc:SimpleStackPanel>
+    </Grid>
+</UserControl>

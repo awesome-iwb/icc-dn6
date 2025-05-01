@@ -9,7 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\icc-transparent-black.png" />
+    <None Remove="Resources\icc-transparent-white.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="HandyControls" Version="3.5.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\icc-transparent-black.png" />
+    <Resource Include="Resources\icc-transparent-white.png" />
   </ItemGroup>
 
 </Project>

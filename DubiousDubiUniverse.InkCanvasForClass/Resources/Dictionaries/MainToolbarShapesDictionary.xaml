@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DrawingImage x:Key="toolbar_head_shape">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V48 H48 V0 H0 Z">
+                <GeometryDrawing Brush="#FFE6E6E6" Geometry="F1 M48,48z M0,0z M0,12.8C0,8.31958 0,6.07937 0.871948,4.36808 1.63893,2.86278 2.86278,1.63893 4.36808,0.871948 6.07937,0 8.31958,0 12.8,0L35.2,0C39.6804,0 41.9206,0 43.6319,0.871948 45.1372,1.63893 46.3611,2.86278 47.1281,4.36808 48,6.07937 48,8.31958 48,12.8L48,35.2C48,39.6804 48,41.9206 47.1281,43.6319 46.3611,45.1372 45.1372,46.3611 43.6319,47.1281 41.9206,48 39.6804,48 35.2,48L12.8,48C8.31958,48 6.07937,48 4.36808,47.1281 2.86278,46.3611 1.63893,45.1372 0.871948,43.6319 0,41.9206 0,39.6804 0,35.2L0,12.8z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="toolbar_body_side">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V48 H10 V0 H0 Z">
+                <DrawingGroup.Transform>
+                    <TranslateTransform X="5.5156752646126628E-13" Y="9.1519165564078048E-14" />
+                </DrawingGroup.Transform>
+                <GeometryDrawing Brush="#FFE6E6E6" Geometry="F1 M10,48z M0,0z M10,48L8.76855,47.998C7.6868,47.9908 7.01905,47.9619 6.43945,47.8467 3.26593,47.2154 0.784574,44.7341 0.15332,41.5605 -0.000348702,40.7878 7.11725E-09,39.8584 7.11725E-09,38L7.11725E-09,10C7.11725E-09,8.14158 -0.000348702,7.2122 0.15332,6.43945 0.784574,3.26593 3.26593,0.784574 6.43945,0.15332 7.2122,-0.000348702 8.14158,7.11771E-09 10,7.11771E-09L10,48z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="toolbar_body_side_r">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V48 H10 V0 H0 Z">
+                <GeometryDrawing Brush="#FFE6E6E6" Geometry="F1 M10,48z M0,0z M1.23145,0.00195312C2.3132,0.00915372 2.98095,0.0380601 3.56055,0.15332 6.73407,0.784574 9.21543,3.26593 9.84668,6.43945 10.0003,7.2122 10,8.14158 10,10L10,38C10,39.8584 10.0003,40.7878 9.84668,41.5605 9.21543,44.7341 6.73407,47.2154 3.56055,47.8467 2.7878,48.0003 1.85842,48 0,48L0,0 1.23145,0.00195312z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

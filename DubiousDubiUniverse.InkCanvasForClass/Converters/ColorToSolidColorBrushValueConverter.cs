@@ -1,32 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace DubiousDubiUniverse.InkCanvasForClass.Converters
-{
-    public class ColorToSolidColorBrushValueConverter : IValueConverter {
-        public object Convert(object value, Type targetType, object parameter,
-            System.Globalization.CultureInfo culture) {
-            if (null == value) {
-                return null;
-            }
+namespace DubiousDubiUniverse.InkCanvasForClass.Converters;
 
-            if (value is Color) {
-                Color color = (Color)value;
-                return new SolidColorBrush(color);
-            }
+public class ColorToSolidColorBrushValueConverter : IValueConverter {
+    public object Convert(object value, Type targetType, object parameter,
+        CultureInfo culture) {
+        if (null == value) return null;
 
-            Type type = value.GetType();
-            throw new InvalidOperationException("Unsupported type [" + type.Name + "]");
+        if (value is Color) {
+            var color = (Color)value;
+            return new SolidColorBrush(color);
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter,
-            System.Globalization.CultureInfo culture) {
-            throw new NotImplementedException();
-        }
+        var type = value.GetType();
+        throw new InvalidOperationException("Unsupported type [" + type.Name + "]");
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter,
+        CultureInfo culture) {
+        throw new NotImplementedException();
     }
 }

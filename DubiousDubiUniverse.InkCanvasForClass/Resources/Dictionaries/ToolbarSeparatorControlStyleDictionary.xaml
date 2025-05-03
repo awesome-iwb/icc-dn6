@@ -2,11 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:toolbar="clr-namespace:DubiousDubiUniverse.InkCanvasForClass.Controls.Toolbar"
                     xmlns:converters="clr-namespace:DubiousDubiUniverse.InkCanvasForClass.Converters">
-    <converters:ColorToSolidColorBrushValueConverter x:Key="ColorToSolidColorBrushValueConverter"/>
-    <Style x:Key="tb_default_separator" TargetType="toolbar:ToolbarSeparatorControl">
+    <converters:ColorToSolidColorBrushValueConverter x:Key="ColorToSolidColorBrushValueConverter" />
+    <Style x:Key="tb_default_separator" TargetType="{x:Type toolbar:ToolbarSeparatorControl}">
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Focusable" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="toolbar:ToolbarSeparatorControl">
+                <ControlTemplate TargetType="{x:Type toolbar:ToolbarSeparatorControl}">
                     <Grid VerticalAlignment="Center">
                         <Border
                             Height="{TemplateBinding SeparatorHeight}"
